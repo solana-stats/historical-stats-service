@@ -1,0 +1,10 @@
+{
+  "name": "historical-stats-service",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "https://github.com/solana-stats/historical-stats-service.git",
+  "license": "MIT",
+  "dependencies": {
+    "http": "^0.0.1-security"
+  }
+}
