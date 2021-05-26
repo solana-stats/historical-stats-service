@@ -1,0 +1,18 @@
+{
+  "family": "historical-service",
+  "containerDefinitions": [{
+    "environment": [],
+    "name": "historical-service",
+    "image": "solana-stats/historical-service",
+    "cpu": 256,
+    "memory": 256,
+    "portMappings": [{
+      "containerPort": 8080,
+      "hostPort": 0
+    }],
+    "essential": true
+  }],
+  "requiresCompatibilities": [
+    "EC2"
+  ]
+}
