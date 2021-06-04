@@ -1,5 +1,6 @@
 {
   "family": "historical-service",
+  "taskRoleArn": "arn:aws:iam::255593285316:role/solana-stats-ec2",
   "containerDefinitions": [{
     "environment": [],
     "name": "historical-service",
