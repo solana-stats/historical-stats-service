@@ -83,5 +83,5 @@ jobs:
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
           service: historical-service
-          cluster: solana-stats-ecs
+          cluster: solana-stats-spot
           wait-for-service-stability: true

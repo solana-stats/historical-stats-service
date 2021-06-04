@@ -4,12 +4,20 @@
     "environment": [],
     "name": "historical-service",
     "image": "solana-stats/historical-service",
-    "cpu": 256,
-    "memory": 256,
+    "cpu": 2048,
+    "memory": 900,
     "portMappings": [{
       "containerPort": 8080,
       "hostPort": 0
     }],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "ecs/historical-service",
+        "awslogs-region": "us-east-1",
+        "awslogs-stream-prefix": "ecs"
+      }
+    },
     "essential": true
   }],
   "requiresCompatibilities": [
