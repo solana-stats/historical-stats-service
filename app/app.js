@@ -22,7 +22,9 @@ async function init() {
 
 init().then(() => {
   app.listen(8080, () => {
+    const { startHistoricalRetrieval } = require('./service/historical.service');
     console.log(`Historical Service Started Successfully`);
+    startHistoricalRetrieval();
   });
 })
 
