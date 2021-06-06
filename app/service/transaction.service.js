@@ -42,7 +42,8 @@ const isFailed = (transaction) => {
 const isVote = (transaction) => {
 
   transaction = transaction.transaction;
-  if (transaction && transaction.message && transaction.message.instructions) {
+  if (transaction && transaction.message && transaction.message.instructions && transaction.message.instructions > 0) {
+    console.log(transaction.message.instructions);
     if (transaction.message.instructions[0].program === "vote") {
       return true;
     }
@@ -53,7 +54,7 @@ const isVote = (transaction) => {
 const isSerum = (transaction) => {
 
   transaction = transaction.transaction;
-  if (transaction && transaction.message && transaction.message.instructions) {
+  if (transaction && transaction.message && transaction.message.instructions && transaction.message.instructions) {
     if (transaction.message.instructions[0].programId === SERUM_V3_ADDRESS) {
       return true;
     }
