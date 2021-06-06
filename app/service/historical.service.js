@@ -13,8 +13,8 @@ const startHistoricalRetrieval = async () => {
     try {
       let confirmedBlock = await getConfirmedBlock(currentSlot);
       let block = confirmedBlock.data;
-      if (block.error && block.error.code === -32007) {
-        insertSkippedBlock(currentSlot);
+      if (block.error && (block.error.code === -32007 || block.error.code === -32009)) {
+        insertSkippedBlock(currentSlot, block.error.code);
       } else if (block.error && block.error.code === -32004) {
         taskIndex--;
         sleepTime = 2500;
@@ -52,9 +52,9 @@ function analyzeBlock(slot, block) {
   insertNewBlock(dbKeys, dbValues);
 }
 
-function insertSkippedBlock(slot) {
-  let dbKeys = ['block', 'skipped'];
-  let dbValues = [slot, true];
+function insertSkippedBlock(slot, code) {
+  let dbKeys = ['block', 'skipped', 'code'];
+  let dbValues = [slot, true, code];
   insertNewBlock(dbKeys, dbValues);
 }
 
