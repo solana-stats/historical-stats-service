@@ -6,7 +6,7 @@
     "name": "historical-service",
     "image": "solana-stats/historical-service",
     "cpu": 2048,
-    "memory": 900,
+    "memory": 450,
     "portMappings": [{
       "containerPort": 8080,
       "hostPort": 0
